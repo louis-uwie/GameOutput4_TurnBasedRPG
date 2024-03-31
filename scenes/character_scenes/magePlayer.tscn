@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm5ctrylaiabw"]
+[gd_scene load_steps=10 format=3 uid="uid://bm5ctrylaiabw"]
 
 [ext_resource type="Texture2D" uid="uid://cxx837i0pbppr" path="res://assets/sprites/Puny-Characters/Mage-Cyan.png" id="1_14qhr"]
 [ext_resource type="Script" path="res://assets/scripts/magePlayer.gd" id="2_kbqic"]
+[ext_resource type="PackedScene" uid="uid://cpghuls7vh5bv" path="res://scenes/user_interfaces/mage_moves.tscn" id="3_o2ib2"]
 
 [sub_resource type="Animation" id="Animation_1obf0"]
 resource_name = "Attack"
@@ -115,3 +116,8 @@ offset_right = -21.6667
 offset_bottom = -14.6667
 grow_horizontal = 2
 show_percentage = false
+
+[node name="Mage buttons" parent="." instance=ExtResource("3_o2ib2")]
+visible = false
+offset = Vector2(120, 224)
+transform = Transform2D(1, 0, 0, 1, 120, 224)

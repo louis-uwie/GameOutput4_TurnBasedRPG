@@ -26,6 +26,7 @@ func _input(event):
 	# select move
 	if !players_array[turn_index].is_turn_started:
 		players_array[turn_index].execute_turn()
+		players_array[turn_index].mage_buttons.visible = true
 		return
 	
 	if !players_array[turn_index].is_turn_done: return
