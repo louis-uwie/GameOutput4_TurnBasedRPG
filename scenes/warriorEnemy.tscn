@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c70f4uj38afbb"]
+[gd_scene load_steps=6 format=3 uid="uid://c70f4uj38afbb"]
 
 [ext_resource type="Texture2D" uid="uid://c1fqem4i5ps16" path="res://assets/sprites/Puny-Characters/Orc-Grunt.png" id="1_rwcll"]
 [ext_resource type="Script" path="res://assets/scripts/warriorEnemy.gd" id="2_acb3o"]
@@ -35,59 +35,8 @@ tracks/0/keys = {
 "values": [145]
 }
 
-[sub_resource type="Animation" id="Animation_5qecl"]
-resource_name = "Attack"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.1, 1.3, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [145, 146, 147, 148, 149, 150, 151, 152, 145]
-}
-
-[sub_resource type="Animation" id="Animation_pa360"]
-resource_name = "Dies"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [161, 162, 163, 164, 165, 166, 167]
-}
-
-[sub_resource type="Animation" id="Animation_63pux"]
-resource_name = "Damaged"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [145, 162, 163, 164, 165, 166, 162, 163]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4oybe"]
 _data = {
-"Attack": SubResource("Animation_5qecl"),
-"Damaged": SubResource("Animation_63pux"),
-"Dies": SubResource("Animation_pa360"),
 "Idle": SubResource("Animation_vbt8t"),
 "RESET": SubResource("Animation_muay0")
 }
