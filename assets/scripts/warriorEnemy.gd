@@ -13,6 +13,8 @@ var is_defending = false
 var target = null
 var chosen_move = 0
 var charName = "Orc Warrior"
+var output = []
+var is_animating = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -40,19 +42,31 @@ func damage_taken(damage):
 	return mitigated_damage
 
 func attack(enemy):
+	var mitigated_damage = enemy.damage_taken(damage)
+	output.append("Orc warrior attacked %s!" % str(enemy.charName))
+	
 	if enemy.is_defending:
-		enemy.health -= enemy.damage_taken(damage) * .75
+		enemy.health -= mitigated_damage * .75
 		enemy.is_defending = false
 	else:
-		enemy.health -= enemy.damage_taken(damage)
+		enemy.health -= mitigated_damage
 	
-	# TODO: if damage taken = 0, output "dodged!"
+	if mitigated_damage == 0:
+		output.append("But %s dodged the attack!" % str(enemy.charName))
 
 func defend():
 	is_defending = true
+	output.append("Orc Warrior is defending itself!")
 	
 func animate_turn():
 	if chosen_move == 0:
 		defend()
 	if chosen_move == 1:
 		attack(target)
+		
+func reset():
+	skip = false
+	is_defending = false
+	target = null
+	output = []
+	is_animating = false

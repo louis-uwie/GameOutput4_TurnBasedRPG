@@ -13,8 +13,8 @@ radius = 8.76427
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxyge"]
 radius = 7.07107
 
-[sub_resource type="SystemFont" id="SystemFont_ks7s4"]
-font_names = PackedStringArray("Bebas")
+[sub_resource type="SystemFont" id="SystemFont_af1j8"]
+font_names = PackedStringArray("Arial")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_esw7u")
@@ -44,13 +44,14 @@ position = Vector2(256, 256)
 position = Vector2(192, 192)
 
 [node name="PlayerNotification" type="Label" parent="."]
-offset_left = 192.0
-offset_top = 96.0
-offset_right = 512.0
-offset_bottom = 119.0
-theme_override_fonts/font = SubResource("SystemFont_ks7s4")
+offset_left = 212.0
+offset_top = 112.0
+offset_right = 492.0
+offset_bottom = 135.0
+theme_override_fonts/font = SubResource("SystemFont_af1j8")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="WarriorEnemy/Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="WarriorEnemy/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="input_event" from="MageEnemy/Mage2D" to="." method="_on_mage_2d_input_event"]
+[connection signal="mouse_entered" from="MageEnemy/Mage2D" to="." method="_on_mage_2d_mouse_entered"]

@@ -2,7 +2,7 @@ extends Sprite2D
 @onready var warrior_enemy = $"../WarriorEnemy"
 @onready var warrior_player = $"../WarriorPlayer"
 @onready var mage_player = $"../MagePlayer"
-
+var is_animating = false
 var health = 100
 var turn_speed = 70
 var damage = 20
@@ -14,6 +14,7 @@ var is_defending = false
 var chosen_move = 0
 var target = null
 var charName = "Orc Mage"
+var output = []
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -30,15 +31,21 @@ func truth_chance(percent):
 func team_heal():
 	health += 10
 	warrior_enemy.health += 10
+	output.append("Orc mage healed their team!")
 	
 func attack(enemy):
+	var mitigated_damage = enemy.damage_taken(damage)
+	output.append("Orc mage attacked %s!" % str(enemy.charName))
+	
 	if enemy.is_defending:
-		enemy.health -= enemy.damage_taken(damage) * .75
+		enemy.health -= mitigated_damage * .75
 		enemy.is_defending = false
 	else:
-		enemy.health -= enemy.damage_taken(damage)
+		enemy.health -= mitigated_damage
 	
-	# TODO: if damage taken = 0, output "dodged!"
+	if mitigated_damage == 0:
+		output.append("But %s dodged the attack!" % str(enemy.charName))
+		
 		
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
@@ -55,3 +62,10 @@ func animate_turn():
 		team_heal()
 	if chosen_move == 1:
 		attack(target)
+		
+func reset():
+	skip = false
+	is_defending = false
+	target = null
+	output = []
+	is_animating = false

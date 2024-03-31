@@ -4,12 +4,13 @@ extends Node2D
 @onready var warrior_player = $WarriorPlayer
 @onready var warrior_enemy = $WarriorEnemy
 @onready var mage_enemy = $MageEnemy
+@onready var player_notification = $PlayerNotification
 
 var turn_queue = []
 var players_array = []
 var turn_index = 0
 var counter = 0
-var dialogues = []
+var queue_index = 0
 
 func _ready():
 	players_array.append(mage_player)
@@ -18,10 +19,10 @@ func _ready():
 	turn_queue.append(warrior_player)	
 	turn_queue.append(warrior_enemy)
 	turn_queue.append(mage_enemy)
-	$PlayerNotification.text = "Danger Approaches..."
 	
 	
 func _process(delta):
+	
 	# select move
 	if !players_array[turn_index].is_turn_started:
 		players_array[turn_index].execute_turn()
@@ -37,21 +38,36 @@ func _process(delta):
 		warrior_enemy.execute_turn()
 		
 		turn_queue.sort_custom(_compare_speed)
-		for turn in turn_queue:
-			print("Turn: ", turn, " Speed: ", turn.turn_speed)
-			
-		# deal effects according to turn queue
-		# mage_player.animate_turn()
+		#for turn in turn_queue:
+			#print("Turn: ", turn, " Speed: ", turn.turn_speed)
+		
+		if !turn_queue[queue_index].is_animating:
+			turn_queue[queue_index].animate_turn()
+			turn_queue[queue_index].is_animating = true
+			print("Animating")
+		
 
-		#if enemy.skip:
-			#notification.text = "Enemy Frozen!"
+		
+		if Input.is_action_just_pressed("mouse_left"):
+			print("Queue Index: ", queue_index)
+			print("Counter: ", counter)
+			player_notification.text = turn_queue[queue_index].output[counter]
+			counter +=1
+			
+			
+		if counter >= turn_queue[queue_index].output.size():
+			queue_index += 1
+			counter = 0
+		
 		
 		# If all moves have played / animated out
-		
-		if counter == 0:
+		if queue_index > 3:
+			print("reset")
 			turn_index = 0
-			for player in players_array:
-				player.reset()
+			counter = 0
+			queue_index = 0
+			for character in turn_queue:
+				character.reset()
 				
 		return
 	turn_index += 1

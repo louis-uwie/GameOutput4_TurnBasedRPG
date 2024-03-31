@@ -16,6 +16,9 @@ var is_defending = false
 var chosen_move = 0
 var is_selecting_target = false
 var target = null
+var charName = "Ally Warrior"
+var output = []
+var is_animating = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -36,18 +39,25 @@ func truth_chance(percent):
 	
 func attack(enemy):
 	$AnimationPlayer.play("Attack")
+	
+	var mitigated_damage = enemy.damage_taken(damage)
+	output.append("Ally warrior attacked %s!" % str(enemy.charName))
+	
 	if enemy.is_defending:
-		enemy.health -= enemy.damage_taken(damage) * .25
+		enemy.health -= mitigated_damage * .25
 		enemy.is_defending = false
 	else:
-		enemy.health -= enemy.damage_taken(damage)
+		enemy.health -= mitigated_damage
 	
-	notification.text = "Slashed enemy! %s, %s HP Left" % [str(enemy.charName),str(enemy.health)]
 	setHealthBar()
-	# TODO: if damage taken = 0, output "dodged!"
+
+	if mitigated_damage == 0:
+		output.append("But %s dodged the attack!" % str(enemy.charName))
 
 func defend():
 	is_defending = true
+	output.append("Ally warrior defended!")
+	print("defending")
 
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
@@ -71,14 +81,12 @@ func animate_turn():
 		defend()
 		
 func _on_attack_pressed():
-	world.counter += 1
 	notification.text = "Click on an enemy to slash!!"
 	chosen_move = 0
 	is_selecting_target = true
 	
 
 func _on_defend_pressed():
-	world.counter += 1
 	chosen_move = 1
 	finish_turn()
 	
@@ -88,3 +96,5 @@ func reset():
 	is_defending = false
 	is_selecting_target = false
 	target = null
+	output = []
+	is_animating = false

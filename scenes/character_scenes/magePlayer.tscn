@@ -307,6 +307,7 @@ sources/5 = SubResource("TileSetAtlasSource_0tea2")
 
 [sub_resource type="SystemFont" id="SystemFont_gjgpf"]
 font_names = PackedStringArray("Cooper")
+subpixel_positioning = 0
 
 [node name="MagePlayer" type="Sprite2D"]
 texture_filter = 1
