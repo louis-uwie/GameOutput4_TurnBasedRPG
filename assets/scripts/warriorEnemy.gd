@@ -1,4 +1,6 @@
 extends Sprite2D
+@onready var warrior_player = $"../WarriorPlayer"
+@onready var mage_player = $"../MagePlayer"
 
 var health = 200
 var turn_speed = 30
@@ -8,6 +10,9 @@ var crit_chance = 10
 var dodge_chance = 10
 var skip = false
 var is_defending = false
+var target = null
+var chosen_move = 0
+var charName = "Orc Warrior"
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -17,7 +22,8 @@ func _process(delta):
 	pass
 	
 func execute_turn():
-	print("warrior enemy move")
+	target = warrior_player if truth_chance(50) else mage_player
+	chosen_move = 0 if truth_chance(50) else 1
 
 func truth_chance(percent):
 	var random_value = randf()
@@ -44,3 +50,9 @@ func attack(enemy):
 
 func defend():
 	is_defending = true
+	
+func animate_turn():
+	if chosen_move == 0:
+		defend()
+	if chosen_move == 1:
+		attack(target)

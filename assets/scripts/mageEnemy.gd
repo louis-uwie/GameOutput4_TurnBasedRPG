@@ -13,6 +13,7 @@ var skip = false
 var is_defending = false
 var chosen_move = 0
 var target = null
+var charName = "Orc Mage"
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -48,3 +49,9 @@ func damage_taken(damage):
 		mitigated_damage *= 2  # Critical hit occurred, so double the damage
 
 	return mitigated_damage
+	
+func animate_turn():
+	if chosen_move == 0:
+		team_heal()
+	if chosen_move == 1:
+		attack(target)
