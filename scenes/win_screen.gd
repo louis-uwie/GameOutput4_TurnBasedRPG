@@ -3,7 +3,7 @@ extends Control
 
 @onready var play_again_button = $MarginContainer/HBoxContainer/VBoxContainer/Play_Again as Button
 @onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
-@onready var start_level = preload("res://scenes/world.tscn")
+@onready var start_level = preload("res://scenes/main_menu.tscn")
 
 func _ready():
 	play_again_button.button_down.connect(on_play_again_pressed)

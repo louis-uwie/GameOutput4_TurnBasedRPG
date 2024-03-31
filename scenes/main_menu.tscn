@@ -27,7 +27,6 @@ offset_right = -327.04
 offset_bottom = -27.7841
 texture = ExtResource("1_eqrgn")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
