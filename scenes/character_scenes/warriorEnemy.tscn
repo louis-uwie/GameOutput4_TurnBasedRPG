@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c70f4uj38afbb"]
 
-[ext_resource type="Texture2D" uid="uid://c1fqem4i5ps16" path="res://assets/sprites/Puny-Characters/Orc-Grunt.png" id="1_rwcll"]
-[ext_resource type="Script" path="res://assets/scripts/warriorEnemy.gd" id="2_acb3o"]
+[ext_resource type="Texture2D" uid="uid://c1fqem4i5ps16" path="res://assets/sprites/Puny-Characters/Orc-Grunt.png" id="1_5su38"]
+[ext_resource type="Script" path="res://assets/scripts/warriorEnemy.gd" id="2_etkxt"]
 
 [sub_resource type="Animation" id="Animation_vbt8t"]
 resource_name = "Idle"
@@ -44,11 +44,11 @@ _data = {
 [node name="WarriorEnemy" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_rwcll")
+texture = ExtResource("1_5su38")
 hframes = 24
 vframes = 8
 frame = 145
-script = ExtResource("2_acb3o")
+script = ExtResource("2_etkxt")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -8.0

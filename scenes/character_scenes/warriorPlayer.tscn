@@ -1,39 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cm8735yg7m83d"]
 
-[ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_gibji"]
-[ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_smnfc"]
-
-[sub_resource type="Animation" id="Animation_m71ar"]
-resource_name = "Idle"
-length = 0.7
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [24, 25, 24]
-}
-
-[sub_resource type="Animation" id="Animation_fgdr3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [24]
-}
+[ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_0dqhd"]
+[ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_6sq80"]
 
 [sub_resource type="Animation" id="Animation_bev58"]
 resource_name = "Attack"
@@ -83,6 +51,38 @@ tracks/0/keys = {
 "values": [40, 42, 43, 44, 45, 46, 47, 46]
 }
 
+[sub_resource type="Animation" id="Animation_m71ar"]
+resource_name = "Idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [24, 25, 24]
+}
+
+[sub_resource type="Animation" id="Animation_fgdr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kgd6c"]
 _data = {
 "Attack": SubResource("Animation_bev58"),
@@ -95,11 +95,11 @@ _data = {
 [node name="WarriorPlayer" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-texture = ExtResource("1_gibji")
+texture = ExtResource("1_0dqhd")
 hframes = 24
 vframes = 8
 frame = 24
-script = ExtResource("2_smnfc")
+script = ExtResource("2_6sq80")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

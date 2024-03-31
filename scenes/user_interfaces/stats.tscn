@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://ce2lsbe51oofa"]
 
-[ext_resource type="Script" path="res://scenes/stats.gd" id="1_acigt"]
+[ext_resource type="Script" path="res://assets/scripts/stats.gd" id="1_acigt"]
 [ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="1_vrkd0"]
 [ext_resource type="Texture2D" uid="uid://chwvpuobbodvx" path="res://assets/sprites/Icons/upicon.png" id="2_tyy2w"]
 [ext_resource type="Texture2D" uid="uid://dbbr4ydhc30r2" path="res://assets/sprites/Icons/downicon.png" id="3_jmyvx"]
