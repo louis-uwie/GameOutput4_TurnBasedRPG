@@ -3,23 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cxx837i0pbppr" path="res://assets/sprites/Puny-Characters/Mage-Cyan.png" id="1_14qhr"]
 [ext_resource type="Script" path="res://assets/scripts/magePlayer.gd" id="2_kbqic"]
 
-[sub_resource type="Animation" id="Animation_p61al"]
-resource_name = "Idle"
-length = 0.7
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [25, 24, 24]
-}
-
 [sub_resource type="Animation" id="Animation_1obf0"]
 resource_name = "Attack"
 length = 2.0
@@ -34,21 +17,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [24, 25, 26, 27, 36, 37, 38, 38, 39]
-}
-
-[sub_resource type="Animation" id="Animation_mw2k7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [24]
 }
 
 [sub_resource type="Animation" id="Animation_jkphx"]
@@ -81,6 +49,38 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [41, 42, 43, 44, 45, 46, 47, 46]
+}
+
+[sub_resource type="Animation" id="Animation_p61al"]
+resource_name = "Idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [25, 24, 24]
+}
+
+[sub_resource type="Animation" id="Animation_mw2k7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dh8b2"]
