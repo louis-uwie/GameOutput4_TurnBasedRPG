@@ -1,8 +1,7 @@
 extends Sprite2D
-@onready var warrior_player = $"../WarriorPlayer"
 
-var health = 100
-var turn_speed = 15
+var health = 150
+var turn_speed = 20
 var damage = 10
 var defense = 10
 var crit_chance = 10
@@ -13,7 +12,7 @@ var is_defending = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Idle")
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,13 +20,13 @@ func _process(delta):
 	
 func execute_turn():
 	is_turn_started = true
-	print("mage player move")
-
-func heal_ally():
-	warrior_player.health += 15
+	print("warrior player move")
 	
-func life_steal(enemy):
-	health += 10
+func truth_chance(percent):
+	var random_value = randf()
+	return random_value <= percent/100
+	
+func attack(enemy):
 	if enemy.is_defending:
 		enemy.health -= enemy.damage_taken(damage) * .25
 		enemy.is_defending = false
@@ -35,17 +34,10 @@ func life_steal(enemy):
 		enemy.health -= enemy.damage_taken(damage)
 	
 	# TODO: if damage taken = 0, output "dodged!"
-	
-func freeze(enemy):
-	if truth_chance(15):
-		enemy.skip = true
-	else:
-		enemy.speed -= 10
-	
-func truth_chance(percent):
-	var random_value = randf()
-	return random_value <= percent/100
-	
+
+func defend():
+	is_defending = true
+
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
 
