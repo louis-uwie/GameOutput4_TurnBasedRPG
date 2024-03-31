@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://ce2lsbe51oofa"]
 
-[ext_resource type="Script" path="res://assets/scripts/stats.gd" id="1_acigt"]
-[ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="1_vrkd0"]
-[ext_resource type="Texture2D" uid="uid://chwvpuobbodvx" path="res://assets/sprites/Icons/upicon.png" id="2_tyy2w"]
-[ext_resource type="Texture2D" uid="uid://dbbr4ydhc30r2" path="res://assets/sprites/Icons/downicon.png" id="3_jmyvx"]
-[ext_resource type="Texture2D" uid="uid://c21bxhl6vrxw" path="res://assets/sprites/Icons/speedicon.png" id="4_a8e83"]
-[ext_resource type="Texture2D" uid="uid://ysuodnn5qxp0" path="res://assets/sprites/Icons/atticon.png" id="5_qxao2"]
-[ext_resource type="Texture2D" uid="uid://bgum133kbxopf" path="res://assets/sprites/Icons/deficon.png" id="6_pbcka"]
-[ext_resource type="Texture2D" uid="uid://dwmjghv2rs2kw" path="res://assets/sprites/Icons/criticon.png" id="7_3cncp"]
-[ext_resource type="Texture2D" uid="uid://bxfeg82un2xp2" path="res://assets/sprites/Icons/dodgeicon.png" id="8_xvlsq"]
-[ext_resource type="Texture2D" uid="uid://dhjwsxq0boo1w" path="res://assets/sprites/Icons/GUI_2x.png" id="9_su2ev"]
+[ext_resource type="Script" path="res://assets/scripts/stats.gd" id="1_10pmi"]
+[ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="2_ot813"]
+[ext_resource type="Texture2D" uid="uid://chwvpuobbodvx" path="res://assets/sprites/Icons/upicon.png" id="3_p70wr"]
+[ext_resource type="Texture2D" uid="uid://dbbr4ydhc30r2" path="res://assets/sprites/Icons/downicon.png" id="4_4x08s"]
+[ext_resource type="Texture2D" uid="uid://c21bxhl6vrxw" path="res://assets/sprites/Icons/speedicon.png" id="5_0hdqq"]
+[ext_resource type="Texture2D" uid="uid://ysuodnn5qxp0" path="res://assets/sprites/Icons/atticon.png" id="6_xhy1x"]
+[ext_resource type="Texture2D" uid="uid://bgum133kbxopf" path="res://assets/sprites/Icons/deficon.png" id="7_2v8xh"]
+[ext_resource type="Texture2D" uid="uid://dwmjghv2rs2kw" path="res://assets/sprites/Icons/criticon.png" id="8_j4o1l"]
+[ext_resource type="Texture2D" uid="uid://bxfeg82un2xp2" path="res://assets/sprites/Icons/dodgeicon.png" id="9_tcuhq"]
+[ext_resource type="Texture2D" uid="uid://dhjwsxq0boo1w" path="res://assets/sprites/Icons/GUI_2x.png" id="10_1xfxr"]
 
 [sub_resource type="SystemFont" id="SystemFont_fkl61"]
 font_names = PackedStringArray("Cooper")
@@ -21,7 +21,7 @@ font_names = PackedStringArray("Cooper")
 font_names = PackedStringArray("Cooper")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi60g"]
-texture = ExtResource("9_su2ev")
+texture = ExtResource("10_1xfxr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -236,7 +236,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_acigt")
+script = ExtResource("1_10pmi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -245,7 +245,7 @@ anchor_right = 0.895
 anchor_bottom = 0.833
 offset_right = -327.04
 offset_bottom = -27.7841
-texture = ExtResource("1_vrkd0")
+texture = ExtResource("2_ot813")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="TextureRect"]
@@ -267,70 +267,70 @@ offset_left = 368.0
 offset_top = 208.0
 offset_right = 401.0
 offset_bottom = 246.0
-icon = ExtResource("2_tyy2w")
+icon = ExtResource("3_p70wr")
 
 [node name="spddownButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 416.0
 offset_top = 208.0
 offset_right = 450.0
 offset_bottom = 246.0
-icon = ExtResource("3_jmyvx")
+icon = ExtResource("4_4x08s")
 
 [node name="attupButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 368.0
 offset_top = 256.0
 offset_right = 401.0
 offset_bottom = 294.0
-icon = ExtResource("2_tyy2w")
+icon = ExtResource("3_p70wr")
 
 [node name="attdownButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 416.0
 offset_top = 256.0
 offset_right = 450.0
 offset_bottom = 294.0
-icon = ExtResource("3_jmyvx")
+icon = ExtResource("4_4x08s")
 
 [node name="defupButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 368.0
 offset_top = 304.0
 offset_right = 401.0
 offset_bottom = 342.0
-icon = ExtResource("2_tyy2w")
+icon = ExtResource("3_p70wr")
 
 [node name="defdownButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 416.0
 offset_top = 304.0
 offset_right = 450.0
 offset_bottom = 342.0
-icon = ExtResource("3_jmyvx")
+icon = ExtResource("4_4x08s")
 
 [node name="critupButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 368.0
 offset_top = 352.0
 offset_right = 401.0
 offset_bottom = 390.0
-icon = ExtResource("2_tyy2w")
+icon = ExtResource("3_p70wr")
 
 [node name="critdownButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 416.0
 offset_top = 352.0
 offset_right = 450.0
 offset_bottom = 390.0
-icon = ExtResource("3_jmyvx")
+icon = ExtResource("4_4x08s")
 
 [node name="dodgeupButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 368.0
 offset_top = 400.0
 offset_right = 401.0
 offset_bottom = 438.0
-icon = ExtResource("2_tyy2w")
+icon = ExtResource("3_p70wr")
 
 [node name="dodgedownButton" type="Button" parent="TextureRect/CanvasLayer"]
 offset_left = 416.0
 offset_top = 400.0
 offset_right = 450.0
 offset_bottom = 438.0
-icon = ExtResource("3_jmyvx")
+icon = ExtResource("4_4x08s")
 
 [node name="spdlabel" type="Label" parent="TextureRect/CanvasLayer"]
 offset_left = 260.0
@@ -345,7 +345,7 @@ text = "Speed:"
 
 [node name="spdicon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
 position = Vector2(236, 224)
-texture = ExtResource("4_a8e83")
+texture = ExtResource("5_0hdqq")
 
 [node name="attlabel" type="Label" parent="TextureRect/CanvasLayer"]
 offset_left = 260.0
@@ -360,7 +360,7 @@ text = "Attack:"
 
 [node name="atticon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
 position = Vector2(236, 272)
-texture = ExtResource("5_qxao2")
+texture = ExtResource("6_xhy1x")
 
 [node name="deflabel" type="Label" parent="TextureRect/CanvasLayer"]
 offset_left = 260.0
@@ -375,7 +375,7 @@ text = "Defense:"
 
 [node name="deficon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
 position = Vector2(236, 320)
-texture = ExtResource("6_pbcka")
+texture = ExtResource("7_2v8xh")
 
 [node name="critlabel" type="Label" parent="TextureRect/CanvasLayer"]
 offset_left = 260.0
@@ -390,7 +390,7 @@ text = "Crit:"
 
 [node name="criticon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
 position = Vector2(236, 368)
-texture = ExtResource("7_3cncp")
+texture = ExtResource("8_j4o1l")
 
 [node name="dodgelabel" type="Label" parent="TextureRect/CanvasLayer"]
 offset_left = 260.0
@@ -405,7 +405,7 @@ text = "Dodge:"
 
 [node name="dodgeicon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
 position = Vector2(236, 416)
-texture = ExtResource("8_xvlsq")
+texture = ExtResource("9_tcuhq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

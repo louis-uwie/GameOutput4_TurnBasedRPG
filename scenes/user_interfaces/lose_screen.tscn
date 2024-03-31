@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dh5wy6s6xpsca"]
 
 [ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="1_1vk14"]
-[ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_mk1my"]
+[ext_resource type="Script" path="res://assets/scripts/lose_screen.gd" id="1_mk1my"]
 [ext_resource type="Texture2D" uid="uid://dhjwsxq0boo1w" path="res://assets/sprites/Icons/GUI_2x.png" id="3_sstwm"]
 
 [sub_resource type="SystemFont" id="SystemFont_jtuwl"]
