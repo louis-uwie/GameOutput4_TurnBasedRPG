@@ -10,7 +10,11 @@
 [node name="background" parent="." instance=ExtResource("2_xh5gp")]
 position = Vector2(96, 96)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="background"]
 anchor_mode = 0
+enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 704
+limit_bottom = 512
 editor_draw_limits = true
-editor_draw_drag_margin = true
