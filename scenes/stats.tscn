@@ -1,0 +1,447 @@
+[gd_scene load_steps=16 format=3 uid="uid://ce2lsbe51oofa"]
+
+[ext_resource type="Script" path="res://scenes/stats.gd" id="1_acigt"]
+[ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="1_vrkd0"]
+[ext_resource type="Texture2D" uid="uid://chwvpuobbodvx" path="res://assets/sprites/Icons/upicon.png" id="2_tyy2w"]
+[ext_resource type="Texture2D" uid="uid://dbbr4ydhc30r2" path="res://assets/sprites/Icons/downicon.png" id="3_jmyvx"]
+[ext_resource type="Texture2D" uid="uid://c21bxhl6vrxw" path="res://assets/sprites/Icons/speedicon.png" id="4_a8e83"]
+[ext_resource type="Texture2D" uid="uid://ysuodnn5qxp0" path="res://assets/sprites/Icons/atticon.png" id="5_qxao2"]
+[ext_resource type="Texture2D" uid="uid://bgum133kbxopf" path="res://assets/sprites/Icons/deficon.png" id="6_pbcka"]
+[ext_resource type="Texture2D" uid="uid://dwmjghv2rs2kw" path="res://assets/sprites/Icons/criticon.png" id="7_3cncp"]
+[ext_resource type="Texture2D" uid="uid://bxfeg82un2xp2" path="res://assets/sprites/Icons/dodgeicon.png" id="8_xvlsq"]
+[ext_resource type="Texture2D" uid="uid://dhjwsxq0boo1w" path="res://assets/sprites/Icons/GUI_2x.png" id="9_su2ev"]
+
+[sub_resource type="SystemFont" id="SystemFont_fkl61"]
+font_names = PackedStringArray("Cooper")
+
+[sub_resource type="SystemFont" id="SystemFont_hmofq"]
+font_names = PackedStringArray("Cooper")
+
+[sub_resource type="SystemFont" id="SystemFont_yuk6c"]
+font_names = PackedStringArray("Cooper")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi60g"]
+texture = ExtResource("9_su2ev")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+0:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nh3vq"]
+sources/0 = SubResource("TileSetAtlasSource_gi60g")
+
+[node name="stats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acigt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.895
+anchor_bottom = 0.833
+offset_right = -327.04
+offset_bottom = -27.7841
+texture = ExtResource("1_vrkd0")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TextureRect"]
+offset = Vector2(20, -40)
+transform = Transform2D(1, 0, 0, 1, 20, -40)
+
+[node name="FinishButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 284.0
+offset_top = 471.0
+offset_right = 388.0
+offset_bottom = 514.0
+theme_override_colors/font_hover_color = Color(0.964706, 0.772549, 0.14902, 1)
+theme_override_fonts/font = SubResource("SystemFont_fkl61")
+theme_override_font_sizes/font_size = 30
+text = "Finish"
+
+[node name="spdupButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 368.0
+offset_top = 208.0
+offset_right = 401.0
+offset_bottom = 246.0
+icon = ExtResource("2_tyy2w")
+
+[node name="spddownButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 416.0
+offset_top = 208.0
+offset_right = 450.0
+offset_bottom = 246.0
+icon = ExtResource("3_jmyvx")
+
+[node name="attupButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 368.0
+offset_top = 256.0
+offset_right = 401.0
+offset_bottom = 294.0
+icon = ExtResource("2_tyy2w")
+
+[node name="attdownButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 416.0
+offset_top = 256.0
+offset_right = 450.0
+offset_bottom = 294.0
+icon = ExtResource("3_jmyvx")
+
+[node name="defupButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 368.0
+offset_top = 304.0
+offset_right = 401.0
+offset_bottom = 342.0
+icon = ExtResource("2_tyy2w")
+
+[node name="defdownButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 416.0
+offset_top = 304.0
+offset_right = 450.0
+offset_bottom = 342.0
+icon = ExtResource("3_jmyvx")
+
+[node name="critupButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 368.0
+offset_top = 352.0
+offset_right = 401.0
+offset_bottom = 390.0
+icon = ExtResource("2_tyy2w")
+
+[node name="critdownButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 416.0
+offset_top = 352.0
+offset_right = 450.0
+offset_bottom = 390.0
+icon = ExtResource("3_jmyvx")
+
+[node name="dodgeupButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 368.0
+offset_top = 400.0
+offset_right = 401.0
+offset_bottom = 438.0
+icon = ExtResource("2_tyy2w")
+
+[node name="dodgedownButton" type="Button" parent="TextureRect/CanvasLayer"]
+offset_left = 416.0
+offset_top = 400.0
+offset_right = 450.0
+offset_bottom = 438.0
+icon = ExtResource("3_jmyvx")
+
+[node name="spdlabel" type="Label" parent="TextureRect/CanvasLayer"]
+offset_left = 260.0
+offset_top = 216.0
+offset_right = 314.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_hmofq")
+text = "Speed:"
+
+[node name="spdicon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
+position = Vector2(236, 224)
+texture = ExtResource("4_a8e83")
+
+[node name="attlabel" type="Label" parent="TextureRect/CanvasLayer"]
+offset_left = 260.0
+offset_top = 264.0
+offset_right = 314.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_hmofq")
+text = "Attack:"
+
+[node name="atticon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
+position = Vector2(236, 272)
+texture = ExtResource("5_qxao2")
+
+[node name="deflabel" type="Label" parent="TextureRect/CanvasLayer"]
+offset_left = 260.0
+offset_top = 312.0
+offset_right = 314.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_hmofq")
+text = "Defense:"
+
+[node name="deficon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
+position = Vector2(236, 320)
+texture = ExtResource("6_pbcka")
+
+[node name="critlabel" type="Label" parent="TextureRect/CanvasLayer"]
+offset_left = 260.0
+offset_top = 360.0
+offset_right = 314.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_hmofq")
+text = "Crit:"
+
+[node name="criticon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
+position = Vector2(236, 368)
+texture = ExtResource("7_3cncp")
+
+[node name="dodgelabel" type="Label" parent="TextureRect/CanvasLayer"]
+offset_left = 260.0
+offset_top = 408.0
+offset_right = 314.0
+offset_bottom = 431.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_hmofq")
+text = "Dodge:"
+
+[node name="dodgeicon" type="Sprite2D" parent="TextureRect/CanvasLayer"]
+position = Vector2(236, 416)
+texture = ExtResource("8_xvlsq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -448.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.67451, 0.329412, 0.00784314, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_yuk6c")
+theme_override_font_sizes/font_size = 48
+text = "Respec Stats:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nh3vq")
+format = 2
+layer_0/name = "bg"
+layer_0/tile_data = PackedInt32Array(655388, 851968, 1, 655387, 851968, 1, 655386, 851968, 1, 655385, 851968, 1, 655384, 851968, 1, 655383, 851968, 1, 655382, 851968, 1, 655381, 851968, 1, 655380, 851968, 1, 655379, 851968, 1, 655378, 851968, 1, 655377, 851968, 1, 655376, 851968, 1, 655375, 851968, 1, 720911, 851968, 1, 786447, 851968, 1, 851983, 851968, 1, 917519, 851968, 1, 983055, 851968, 1, 1048591, 851968, 1, 1114127, 851968, 1, 1179663, 851968, 1, 1245199, 851968, 1, 1310735, 851968, 1, 1376271, 851968, 1, 1441807, 851968, 1, 1507343, 851968, 1, 1572879, 851968, 1, 1572880, 851968, 1, 1572881, 851968, 1, 1572882, 851968, 1, 1572883, 851968, 1, 1572884, 851968, 1, 1572885, 851968, 1, 1572886, 851968, 1, 1572887, 851968, 1, 1572888, 851968, 1, 1572889, 851968, 1, 1572890, 851968, 1, 1572891, 851968, 1, 1572892, 851968, 1, 1572893, 851968, 1, 1507357, 851968, 1, 1441821, 851968, 1, 1376285, 851968, 1, 1310749, 851968, 1, 1245213, 851968, 1, 1179677, 851968, 1, 1114141, 851968, 1, 1048605, 851968, 1, 983069, 851968, 1, 917533, 851968, 1, 851997, 851968, 1, 786461, 851968, 1, 720925, 851968, 1, 655389, 851968, 1, 720924, 851968, 1, 720923, 851968, 1, 786459, 851968, 1, 786458, 851968, 1, 786457, 851968, 1, 786456, 851968, 1, 851992, 851968, 1, 851991, 851968, 1, 917527, 851968, 1, 983063, 851968, 1, 1048599, 851968, 1, 1048600, 851968, 1, 1114136, 851968, 1, 1179672, 851968, 1, 1179673, 851968, 1, 1245209, 851968, 1, 1245210, 851968, 1, 1310746, 851968, 1, 1376282, 851968, 1, 1376283, 851968, 1, 1441819, 851968, 1, 1441820, 851968, 1, 1507356, 851968, 1, 1507355, 851968, 1, 1507354, 851968, 1, 1507353, 851968, 1, 1507352, 851968, 1, 1507351, 851968, 1, 1507350, 851968, 1, 1507349, 851968, 1, 1507348, 851968, 1, 1507347, 851968, 1, 1507346, 851968, 1, 1507345, 851968, 1, 1507344, 851968, 1, 1441808, 851968, 1, 1441809, 851968, 1, 1441810, 851968, 1, 1441811, 851968, 1, 1441812, 851968, 1, 1441813, 851968, 1, 1441814, 851968, 1, 1441815, 851968, 1, 1441816, 851968, 1, 1441817, 851968, 1, 1441818, 851968, 1, 1310747, 851968, 1, 1310748, 851968, 1, 1245212, 851968, 1, 1179676, 851968, 1, 1114140, 851968, 1, 1048604, 851968, 1, 983068, 851968, 1, 983067, 851968, 1, 917531, 851968, 1, 851995, 851968, 1, 786460, 851968, 1, 1245200, 851968, 1, 1310736, 851968, 1, 1376272, 851968, 1, 1245201, 851968, 1, 1310737, 851968, 1, 1376273, 851968, 1, 1245202, 851968, 1, 1310738, 851968, 1, 1376274, 851968, 1, 1245203, 851968, 1, 1310739, 851968, 1, 1376275, 851968, 1, 1245204, 851968, 1, 1310740, 851968, 1, 1376276, 851968, 1, 1245205, 851968, 1, 1310741, 851968, 1, 1376277, 851968, 1, 1245206, 851968, 1, 1310742, 851968, 1, 1376278, 851968, 1, 1245207, 851968, 1, 1310743, 851968, 1, 1376279, 851968, 1, 1245208, 851968, 1, 1310744, 851968, 1, 1376280, 851968, 1, 1310745, 851968, 1, 1376281, 851968, 1, 1048597, 851968, 1, 1114133, 851968, 1, 1179669, 851968, 1, 1048598, 851968, 1, 1114134, 851968, 1, 1179670, 851968, 1, 1114135, 851968, 1, 1179671, 851968, 1, 1048601, 851968, 1, 1114137, 851968, 1, 1048592, 851968, 1, 1114128, 851968, 1, 1179664, 851968, 1, 1048593, 851968, 1, 1114129, 851968, 1, 1179665, 851968, 1, 1048594, 851968, 1, 1114130, 851968, 1, 1179666, 851968, 1, 1048595, 851968, 1, 1114131, 851968, 1, 1179667, 851968, 1, 1048596, 851968, 1, 1114132, 851968, 1, 1179668, 851968, 1, 851984, 851968, 1, 917520, 851968, 1, 983056, 851968, 1, 851985, 851968, 1, 917521, 851968, 1, 983057, 851968, 1, 851986, 851968, 1, 917522, 851968, 1, 983058, 851968, 1, 851987, 851968, 1, 917523, 851968, 1, 983059, 851968, 1, 851988, 851968, 1, 917524, 851968, 1, 983060, 851968, 1, 720912, 851968, 1, 786448, 851968, 1, 720913, 851968, 1, 786449, 851968, 1, 720914, 851968, 1, 786450, 851968, 1, 720915, 851968, 1, 786451, 851968, 1, 720916, 851968, 1, 786452, 851968, 1, 786453, 851968, 1, 851989, 851968, 1, 917525, 851968, 1, 786454, 851968, 1, 851990, 851968, 1, 917526, 851968, 1, 786455, 851968, 1, 720917, 851968, 1, 720918, 851968, 1, 720919, 851968, 1, 720920, 851968, 1, 720921, 851968, 1, 851993, 851968, 1, 720922, 851968, 1, 851994, 851968, 1, 851996, 851968, 1, 917528, 851968, 1, 983064, 851968, 1, 917529, 851968, 1, 983065, 851968, 1, 917530, 851968, 1, 983066, 851968, 1, 917532, 851968, 1, 983061, 851968, 1, 983062, 851968, 1, 1048602, 851968, 1, 1114138, 851968, 1, 1179674, 851968, 1, 1048603, 851968, 1, 1114139, 851968, 1, 1179675, 851968, 1, 1245211, 851968, 1, 1376284, 851968, 1, 589840, 851968, 0, 589841, 851968, 0, 589842, 851968, 0, 589843, 851968, 0, 589844, 851968, 0, 589845, 851968, 0, 589846, 851968, 0, 589847, 851968, 0, 589848, 851968, 0, 589849, 851968, 0, 589850, 851968, 0, 589851, 851968, 0, 589852, 851968, 0, 589853, 851968, 0, 655390, 917504, 1, 720926, 917504, 1, 786462, 917504, 1, 851998, 917504, 1, 917534, 917504, 1, 983070, 917504, 1, 1048606, 917504, 1, 1114142, 917504, 1, 1179678, 917504, 1, 1245214, 917504, 1, 1310750, 917504, 1, 1376286, 917504, 1, 1441822, 917504, 1, 1507358, 917504, 1, 1638428, 851968, 2, 1638427, 851968, 2, 1638426, 851968, 2, 1638425, 851968, 2, 1638424, 851968, 2, 1638423, 851968, 2, 1638422, 851968, 2, 1638421, 851968, 2, 1638420, 851968, 2, 1638419, 851968, 2, 1638418, 851968, 2, 1638417, 851968, 2, 1638416, 851968, 2, 1638415, 851968, 2, 1638429, 851968, 2, 1638414, 786432, 2, 1638430, 917504, 2, 1572894, 917504, 1, 589854, 917504, 0, 589838, 786432, 0, 589839, 851968, 0, 1572878, 786432, 1, 1507342, 786432, 1, 1441806, 786432, 1, 1376270, 786432, 1, 1310734, 786432, 1, 1245198, 786432, 1, 1179662, 786432, 1, 1114126, 786432, 1, 1048590, 786432, 1, 983054, 786432, 1, 917518, 786432, 1, 851982, 786432, 1, 786446, 786432, 1, 720910, 786432, 1, 655374, 786432, 1)
+layer_1/name = "frame"
+layer_1/tile_data = PackedInt32Array(1572878, 589824, 1, 1507342, 589824, 1, 1441806, 589824, 1, 1376270, 589824, 1, 1310734, 589824, 1, 1245198, 589824, 1, 1179662, 589824, 1, 1114126, 589824, 1, 1048590, 589824, 1, 983054, 589824, 1, 917518, 589824, 1, 851982, 589824, 1, 786446, 589824, 1, 720910, 589824, 1, 655374, 589824, 1, 589838, 589824, 0, 1638414, 589824, 2, 1638430, 720896, 2, 589854, 720896, 0, 655390, 720896, 1, 720926, 720896, 1, 786462, 720896, 1, 851998, 720896, 1, 917534, 720896, 1, 983070, 720896, 1, 1048606, 720896, 1, 1114142, 720896, 1, 1179678, 720896, 1, 1245214, 720896, 1, 1310750, 720896, 1, 1376286, 720896, 1, 1441822, 720896, 1, 1507358, 720896, 1, 1572894, 720896, 1, 1638429, 655360, 2, 1638428, 655360, 2, 1638427, 655360, 2, 1638426, 655360, 2, 1638425, 655360, 2, 1638424, 655360, 2, 1638423, 655360, 2, 1638422, 655360, 2, 1638421, 655360, 2, 1638420, 655360, 2, 1638419, 655360, 2, 1638418, 655360, 2, 1638417, 655360, 2, 1638416, 655360, 2, 1638415, 655360, 2, 589839, 655360, 0, 589840, 655360, 0, 589841, 655360, 0, 589842, 655360, 0, 589843, 655360, 0, 589844, 655360, 0, 589845, 655360, 0, 589846, 655360, 0, 589847, 655360, 0, 589848, 655360, 0, 589849, 655360, 0, 589850, 655360, 0, 589851, 655360, 0, 589852, 655360, 0, 589853, 655360, 0)

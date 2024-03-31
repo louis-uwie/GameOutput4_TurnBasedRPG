@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://cm8735yg7m83d" path="res://scenes/warriorPlayer.tscn" id="3_b1asw"]
 [ext_resource type="PackedScene" uid="uid://c70f4uj38afbb" path="res://scenes/warriorEnemy.tscn" id="4_241bu"]
 [ext_resource type="PackedScene" uid="uid://b0hqiuqtevwq1" path="res://scenes/mageEnemy.tscn" id="5_bpfac"]
+[gd_scene load_steps=5 format=3 uid="uid://bcphvnrbxkqry"]
+
+[ext_resource type="PackedScene" uid="uid://bv5fnvb3h5khm" path="res://scenes/background.tscn" id="1_vi73n"]
+[ext_resource type="PackedScene" uid="uid://bm5ctrylaiabw" path="res://scenes/magePlayer.tscn" id="2_xh5gp"]
+[ext_resource type="PackedScene" uid="uid://k75s8f6q85hr" path="res://scenes/warrior_moves.tscn" id="3_tiagy"]
+[ext_resource type="PackedScene" uid="uid://cpghuls7vh5bv" path="res://scenes/mage_moves.tscn" id="4_8hd4y"]
 
 [node name="World" type="Node2D"]
 
@@ -32,3 +38,10 @@ position = Vector2(448, 256)
 
 [node name="MageEnemy" parent="." instance=ExtResource("5_bpfac")]
 position = Vector2(512, 192)
+editor_draw_drag_margin = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_tiagy")]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("4_8hd4y")]
+offset = Vector2(500, 0)
+transform = Transform2D(1, 0, 0, 1, 500, 0)
