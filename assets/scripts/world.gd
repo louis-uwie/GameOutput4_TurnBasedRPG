@@ -13,25 +13,19 @@ func _ready():
 	players_array.append(mage_player)
 	players_array.append(warrior_player)
 	turn_queue.append(mage_player)
-	turn_queue.append(warrior_player)
+	turn_queue.append(warrior_player)	
 	turn_queue.append(warrior_enemy)
 	turn_queue.append(mage_enemy)
 
-func _input(event):
-	if !event.is_action_pressed("mouse_left"): return
-	
-	print(players_array[turn_index])
-	print(event)
-	
+func _process(delta):
 	# select move
 	if !players_array[turn_index].is_turn_started:
 		players_array[turn_index].execute_turn()
-		players_array[turn_index].mage_buttons.visible = true
+		players_array[turn_index].buttons.visible = true
 		return
 	
 	if !players_array[turn_index].is_turn_done: return
 	
-	print("turn is done")
 	
 	# if all turns done
 	if turn_index:
@@ -43,7 +37,16 @@ func _input(event):
 			print("Turn: ", turn, " Speed: ", turn.turn_speed)
 			
 		# deal effects according to turn queue
+		# mage_player.animate_turn()
+		
+		# if enemy.skip:
+			#set text to "enemy is frozen. He cannot move."
+		
+		# If all moves have played / animated out
 		turn_index = 0
+		for player in players_array:
+			player.reset()
+			
 		return
 	
 	turn_index += 1
@@ -51,5 +54,14 @@ func _input(event):
 func _compare_speed(a, b):
 	return a.turn_speed > b.turn_speed
 
-	
-	 
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("mouse_left") and players_array[turn_index].is_selecting_target:
+		players_array[turn_index].target = warrior_enemy
+		players_array[turn_index].finish_turn()
+
+
+func _on_mage_2d_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("mouse_left") and players_array[turn_index].is_selecting_target:
+		players_array[turn_index].target = mage_enemy
+		players_array[turn_index].finish_turn()

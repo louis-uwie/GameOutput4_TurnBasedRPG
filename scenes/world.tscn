@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcphvnrbxkqry"]
+[gd_scene load_steps=9 format=3 uid="uid://bcphvnrbxkqry"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_esw7u"]
 [ext_resource type="PackedScene" uid="uid://bv5fnvb3h5khm" path="res://scenes/user_interfaces/background.tscn" id="1_skhkr"]
@@ -7,19 +7,38 @@
 [ext_resource type="PackedScene" uid="uid://b0hqiuqtevwq1" path="res://scenes/character_scenes/mageEnemy.tscn" id="4_lxmgq"]
 [ext_resource type="PackedScene" uid="uid://cm8735yg7m83d" path="res://scenes/character_scenes/warriorPlayer.tscn" id="5_0ex7c"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewac8"]
+radius = 8.76427
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxyge"]
+radius = 7.07107
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_esw7u")
 
 [node name="Land" parent="." instance=ExtResource("1_skhkr")]
 
-[node name="MagePlayer" parent="." instance=ExtResource("2_ocmlf")]
-position = Vector2(192, 192)
-
 [node name="WarriorEnemy" parent="." instance=ExtResource("3_iw43f")]
 position = Vector2(448, 256)
+
+[node name="Area2D" type="Area2D" parent="WarriorEnemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarriorEnemy/Area2D"]
+shape = SubResource("CircleShape2D_ewac8")
 
 [node name="MageEnemy" parent="." instance=ExtResource("4_lxmgq")]
 position = Vector2(512, 184)
 
+[node name="Mage2D" type="Area2D" parent="MageEnemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MageEnemy/Mage2D"]
+shape = SubResource("CircleShape2D_qxyge")
+
 [node name="WarriorPlayer" parent="." instance=ExtResource("5_0ex7c")]
 position = Vector2(256, 256)
+
+[node name="MagePlayer" parent="." instance=ExtResource("2_ocmlf")]
+position = Vector2(192, 192)
+
+[connection signal="input_event" from="WarriorEnemy/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="MageEnemy/Mage2D" to="." method="_on_mage_2d_input_event"]

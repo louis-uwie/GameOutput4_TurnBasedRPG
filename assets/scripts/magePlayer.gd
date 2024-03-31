@@ -1,6 +1,6 @@
 extends Sprite2D
 @onready var warrior_player = $"../WarriorPlayer"
-@onready var mage_buttons = $"Mage buttons"
+@onready var buttons = $Buttons
 
 const FullHP = 100
 var health = FullHP
@@ -13,6 +13,9 @@ var dodge_chance = 10
 var is_turn_started = false
 var is_turn_done = false
 var is_defending = false
+var chosen_move = 0
+var is_selecting_target = false
+var target = null
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -66,3 +69,39 @@ func damage_taken(damage):
 		mitigated_damage *= 2  # Critical hit occurred, so double the damage
 
 	return mitigated_damage
+
+func _on_heal_pressed():
+	chosen_move = 0
+	finish_turn()
+
+func finish_turn():
+	is_turn_done = true
+	buttons.visible = false
+	is_selecting_target = false
+
+func animate_turn():
+	if chosen_move == 0:
+		heal_ally()
+	if chosen_move == 1:
+		life_steal(target)
+	if chosen_move == 2:
+		freeze(target)
+
+func _on_ls_pressed():
+	chosen_move = 1
+	# select an enemy target
+	is_selecting_target = true
+	
+
+func _on_freeze_pressed():
+	chosen_move = 2
+	# select an enemy target
+	is_selecting_target = true
+	
+func reset():
+	is_turn_started = false
+	is_turn_done = false
+	is_defending = false
+	is_selecting_target = false
+	target = null
+	

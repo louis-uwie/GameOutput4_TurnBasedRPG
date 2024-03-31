@@ -1,5 +1,7 @@
 extends Sprite2D
 @onready var warrior_enemy = $"../WarriorEnemy"
+@onready var warrior_player = $"../WarriorPlayer"
+@onready var mage_player = $"../MagePlayer"
 
 var health = 100
 var turn_speed = 70
@@ -9,12 +11,16 @@ var crit_chance = 25
 var dodge_chance = 25
 var skip = false
 var is_defending = false
+var chosen_move = 0
+var target = null
 
 func _ready():
 	$AnimationPlayer.play("Idle")
 
 func execute_turn():
-	print("mage enemy move")
+	target = warrior_player if truth_chance(50) else mage_player
+	chosen_move = 0 if truth_chance(50) else 1
+		
 	
 func truth_chance(percent):
 	var random_value = randf()
