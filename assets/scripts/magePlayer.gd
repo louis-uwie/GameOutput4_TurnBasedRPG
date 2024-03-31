@@ -1,5 +1,6 @@
 extends Sprite2D
 @onready var warrior_player = $"../WarriorPlayer"
+@onready var mage_buttons = $"Mage buttons"
 
 const FullHP = 100
 var health = FullHP

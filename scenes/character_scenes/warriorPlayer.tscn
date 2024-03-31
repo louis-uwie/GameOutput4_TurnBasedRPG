@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm8735yg7m83d"]
+[gd_scene load_steps=10 format=3 uid="uid://cm8735yg7m83d"]
 
 [ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_gibji"]
 [ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_smnfc"]
+[ext_resource type="PackedScene" uid="uid://k75s8f6q85hr" path="res://scenes/user_interfaces/warrior_moves.tscn" id="3_vcb1l"]
 
 [sub_resource type="Animation" id="Animation_bev58"]
 resource_name = "Attack"
@@ -112,3 +113,8 @@ offset_top = -18.6667
 offset_right = 10.3333
 offset_bottom = -14.6667
 show_percentage = false
+
+[node name="Warrior buttons" parent="." instance=ExtResource("3_vcb1l")]
+visible = false
+offset = Vector2(200, 285)
+transform = Transform2D(1, 0, 0, 1, 200, 285)
