@@ -215,6 +215,7 @@ sources/0 = SubResource("TileSetAtlasSource_jj0hi")
 
 [sub_resource type="SystemFont" id="SystemFont_rpm4h"]
 font_names = PackedStringArray("Cooper")
+subpixel_positioning = 0
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

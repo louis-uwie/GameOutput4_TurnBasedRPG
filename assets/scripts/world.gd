@@ -10,6 +10,7 @@ var players_array = []
 var turn_index = 0
 
 func _ready():
+	$PlayerNotif.text = "Danger approaches."
 	players_array.append(mage_player)
 	players_array.append(warrior_player)
 	turn_queue.append(mage_player)
@@ -25,8 +26,12 @@ func _input(event):
 	
 	# select move
 	if !players_array[turn_index].is_turn_started:
+		
+		$PlayerNotif.text = "Player %s's Turn" % str(turn_index+1)
+		
 		players_array[turn_index].execute_turn()
 		players_array[turn_index].mage_buttons.visible = true
+		
 		return
 	
 	if !players_array[turn_index].is_turn_done: return
@@ -35,8 +40,11 @@ func _input(event):
 	
 	# if all turns done
 	if turn_index:
+		$PlayerNotif.text = "Enemy's Turn"
 		mage_enemy.execute_turn()
 		warrior_enemy.execute_turn()
+		
+		
 		
 		turn_queue.sort_custom(_compare_speed)
 		for turn in turn_queue:

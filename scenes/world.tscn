@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcphvnrbxkqry"]
+[gd_scene load_steps=8 format=3 uid="uid://bcphvnrbxkqry"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_esw7u"]
 [ext_resource type="PackedScene" uid="uid://bv5fnvb3h5khm" path="res://scenes/user_interfaces/background.tscn" id="1_skhkr"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c70f4uj38afbb" path="res://scenes/character_scenes/warriorEnemy.tscn" id="3_iw43f"]
 [ext_resource type="PackedScene" uid="uid://b0hqiuqtevwq1" path="res://scenes/character_scenes/mageEnemy.tscn" id="4_lxmgq"]
 [ext_resource type="PackedScene" uid="uid://cm8735yg7m83d" path="res://scenes/character_scenes/warriorPlayer.tscn" id="5_0ex7c"]
+
+[sub_resource type="SystemFont" id="SystemFont_tv4yf"]
+font_names = PackedStringArray("Bebas")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_esw7u")
@@ -23,3 +26,13 @@ position = Vector2(512, 184)
 
 [node name="WarriorPlayer" parent="." instance=ExtResource("5_0ex7c")]
 position = Vector2(256, 256)
+
+[node name="PlayerNotif" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 96.0
+offset_right = 488.0
+offset_bottom = 120.0
+theme_type_variation = &"GraphNodeTitleLabel"
+theme_override_fonts/font = SubResource("SystemFont_tv4yf")
+horizontal_alignment = 1
+autowrap_mode = 2
