@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcphvnrbxkqry"]
+[gd_scene load_steps=4 format=3 uid="uid://bcphvnrbxkqry"]
 
 [ext_resource type="PackedScene" uid="uid://bv5fnvb3h5khm" path="res://scenes/background.tscn" id="1_vi73n"]
 [ext_resource type="PackedScene" uid="uid://bm5ctrylaiabw" path="res://scenes/magePlayer.tscn" id="2_xh5gp"]
+[ext_resource type="PackedScene" uid="uid://cm8735yg7m83d" path="res://scenes/warriorPlayer.tscn" id="3_b1asw"]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
-[node name="magePlayer" parent="." instance=ExtResource("1_vi73n")]
-
-[node name="background" parent="." instance=ExtResource("2_xh5gp")]
-position = Vector2(96, 96)
+[node name="background" parent="." instance=ExtResource("1_vi73n")]
 
 [node name="Camera2D" type="Camera2D" parent="background"]
+position = Vector2(192, 192)
+scale = Vector2(3, 3)
 anchor_mode = 0
 enabled = false
 limit_left = 0
@@ -18,3 +18,9 @@ limit_top = 0
 limit_right = 704
 limit_bottom = 512
 editor_draw_limits = true
+
+[node name="magePlayer" parent="." instance=ExtResource("2_xh5gp")]
+position = Vector2(128, 200)
+
+[node name="WarriorPlayer" parent="." instance=ExtResource("3_b1asw")]
+position = Vector2(192, 264)

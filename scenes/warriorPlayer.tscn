@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm8735yg7m83d"]
+
+[ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_gibji"]
+
+[node name="WarriorPlayer" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_gibji")
+hframes = 24
+vframes = 8
+frame = 24
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -16.0
+offset_top = -18.6667
+offset_right = -16.0
+offset_bottom = -14.6667
+grow_horizontal = 2
+show_percentage = false
