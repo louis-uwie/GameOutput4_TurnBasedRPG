@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckqvpc77qpgcj"]
+[gd_scene load_steps=6 format=3 uid="uid://c70f4uj38afbb"]
 
 [ext_resource type="Texture2D" uid="uid://c1fqem4i5ps16" path="res://assets/sprites/Puny-Characters/Orc-Grunt.png" id="1_rwcll"]
+[ext_resource type="Script" path="res://assets/scripts/warriorEnemy.gd" id="2_acb3o"]
+
+[sub_resource type="Animation" id="Animation_vbt8t"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [145, 144, 145]
+}
+
+[sub_resource type="Animation" id="Animation_muay0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [145]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4oybe"]
+_data = {
+"Idle": SubResource("Animation_vbt8t"),
+"RESET": SubResource("Animation_muay0")
+}
 
 [node name="WarriorEnemy" type="Sprite2D"]
 texture_filter = 1
@@ -9,3 +48,16 @@ texture = ExtResource("1_rwcll")
 hframes = 24
 vframes = 8
 frame = 145
+script = ExtResource("2_acb3o")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -8.0
+offset_top = -14.0
+offset_right = 8.0
+offset_bottom = -10.0
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4oybe")
+}

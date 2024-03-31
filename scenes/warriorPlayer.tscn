@@ -1,6 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm8735yg7m83d"]
+[gd_scene load_steps=9 format=3 uid="uid://cm8735yg7m83d"]
 
 [ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_gibji"]
+[ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_smnfc"]
+
+[sub_resource type="Animation" id="Animation_m71ar"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [24, 25, 24]
+}
+
+[sub_resource type="Animation" id="Animation_fgdr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_bev58"]
+resource_name = "Attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9, 1.1, 1.5, 1.7, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31, 29, 28, 27]
+}
+
+[sub_resource type="Animation" id="Animation_wjkju"]
+resource_name = "Damaged"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 42, 43, 44, 45, 42, 39, 25]
+}
+
+[sub_resource type="Animation" id="Animation_7ffwm"]
+resource_name = "Dies"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.7, 1.2, 1.4, 1.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 42, 43, 44, 45, 46, 47, 46]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kgd6c"]
+_data = {
+"Attack": SubResource("Animation_bev58"),
+"Damaged": SubResource("Animation_wjkju"),
+"Dies": SubResource("Animation_7ffwm"),
+"Idle": SubResource("Animation_m71ar"),
+"RESET": SubResource("Animation_fgdr3")
+}
 
 [node name="WarriorPlayer" type="Sprite2D"]
 texture_filter = 1
@@ -9,13 +99,16 @@ texture = ExtResource("1_gibji")
 hframes = 24
 vframes = 8
 frame = 24
+script = ExtResource("2_smnfc")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -16.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kgd6c")
+}
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -10.6667
 offset_top = -18.6667
-offset_right = -16.0
+offset_right = 10.3333
 offset_bottom = -14.6667
-grow_horizontal = 2
 show_percentage = false
