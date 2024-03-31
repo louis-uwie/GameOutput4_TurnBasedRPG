@@ -22,13 +22,13 @@ limit_bottom = 512
 editor_draw_limits = true
 
 [node name="magePlayer" parent="." instance=ExtResource("2_xh5gp")]
-position = Vector2(128, 192)
+position = Vector2(192, 192)
 
 [node name="WarriorPlayer" parent="." instance=ExtResource("3_b1asw")]
-position = Vector2(192, 256)
+position = Vector2(256, 256)
 
 [node name="WarriorEnemy" parent="." instance=ExtResource("4_241bu")]
-position = Vector2(384, 256)
+position = Vector2(448, 256)
 
 [node name="MageEnemy" parent="." instance=ExtResource("5_bpfac")]
-position = Vector2(448, 192)
+position = Vector2(512, 192)

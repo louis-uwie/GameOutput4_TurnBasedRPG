@@ -2,7 +2,6 @@ extends Sprite2D
 
 const FullHP = 100
 var health = FullHP
-var isAnimating = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -13,12 +12,8 @@ func setHealthBar() -> void:
 	$HealthBar.value = health
 	
 func _input(event: InputEvent) -> void:
-	
-	isAnimating = true
-	if event.is_action_pressed("ui_accept") && isAnimating:
+	if event.is_action_pressed("ui_accept"):
 		$AnimationPlayer.play("Damaged")
-		print("animating")
-		isAnimating = false
 
 func damage():
 	health -= 25
