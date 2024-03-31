@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh5wy6s6xpsca"]
+
+[ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="1_1vk14"]
+[ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_mk1my"]
+
+[sub_resource type="SystemFont" id="SystemFont_jtuwl"]
+font_names = PackedStringArray("Cooper")
+
+[sub_resource type="SystemFont" id="SystemFont_qcdtd"]
+font_names = PackedStringArray("Cooper")
+
+[node name="lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mk1my")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -448.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1vk14")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -448.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.388235, 0.180392, 0.00392157, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_jtuwl")
+theme_override_font_sizes/font_size = 128
+text = "You LOSE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play_Again" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.545098, 0.254902, 0.0352941, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("SystemFont_qcdtd")
+theme_override_font_sizes/font_size = 24
+text = "Play Again?"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.545098, 0.254902, 0.0352941, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("SystemFont_qcdtd")
+theme_override_font_sizes/font_size = 24
+text = "Quit
+"
