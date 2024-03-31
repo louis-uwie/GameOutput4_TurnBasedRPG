@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0hqiuqtevwq1"]
+
+[ext_resource type="Texture2D" uid="uid://dpujhdh8wg8kg" path="res://assets/sprites/Puny-Characters/Orc-Peon-Red.png" id="1_vrd35"]
+
+[node name="MageEnemy" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_vrd35")
+hframes = 24
+vframes = 8
+frame = 145

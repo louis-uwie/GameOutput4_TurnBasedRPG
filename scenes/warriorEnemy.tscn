@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckqvpc77qpgcj"]
+
+[ext_resource type="Texture2D" uid="uid://c1fqem4i5ps16" path="res://assets/sprites/Puny-Characters/Orc-Grunt.png" id="1_rwcll"]
+
+[node name="WarriorEnemy" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_rwcll")
+hframes = 24
+vframes = 8
+frame = 145
