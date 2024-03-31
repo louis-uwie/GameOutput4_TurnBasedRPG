@@ -10,13 +10,8 @@ var dodge_chance = 25
 var skip = false
 var is_defending = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	$AnimationPlayer.play("Idle")
 
 func execute_turn():
 	print("mage enemy move")
@@ -47,6 +42,3 @@ func damage_taken(damage):
 		mitigated_damage *= 2  # Critical hit occurred, so double the damage
 
 	return mitigated_damage
-
-func _ready():
-	$AnimationPlayer.play("Idle")

@@ -4,7 +4,6 @@ extends Sprite2D
 const FullHP = 100
 var health = FullHP
 var isAnimating = false
-var health = 100
 var turn_speed = 15
 var damage = 10
 var defense = 10
@@ -29,15 +28,6 @@ func _input(event: InputEvent) -> void:
 		$AnimationPlayer.play("Damaged")
 		print("animating")
 		isAnimating = false
-
-func damage():
-	health -= 25
-	if health < 0:
-		health = FullHP
-	setHealthBar()
-
-func process():
-	pass
 	
 func execute_turn():
 	is_turn_started = true
