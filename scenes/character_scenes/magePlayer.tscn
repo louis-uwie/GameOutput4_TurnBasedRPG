@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm5ctrylaiabw"]
 
-[ext_resource type="Texture2D" uid="uid://cxx837i0pbppr" path="res://assets/sprites/Puny-Characters/Mage-Cyan.png" id="1_a0uyy"]
-[ext_resource type="Script" path="res://assets/scripts/magePlayer.gd" id="2_v2x25"]
+[ext_resource type="Texture2D" uid="uid://cxx837i0pbppr" path="res://assets/sprites/Puny-Characters/Mage-Cyan.png" id="1_14qhr"]
+[ext_resource type="Script" path="res://assets/scripts/magePlayer.gd" id="2_kbqic"]
 
 [sub_resource type="Animation" id="Animation_1obf0"]
 resource_name = "Attack"
@@ -95,11 +95,11 @@ _data = {
 [node name="MagePlayer" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-texture = ExtResource("1_a0uyy")
+texture = ExtResource("1_14qhr")
 hframes = 24
 vframes = 8
 frame = 24
-script = ExtResource("2_v2x25")
+script = ExtResource("2_kbqic")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

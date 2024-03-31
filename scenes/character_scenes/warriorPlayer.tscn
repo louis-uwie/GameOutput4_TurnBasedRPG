@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cm8735yg7m83d"]
 
-[ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_0dqhd"]
-[ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_6sq80"]
+[ext_resource type="Texture2D" uid="uid://c2waq4x3b4bxp" path="res://assets/sprites/Puny-Characters/Soldier-Blue.png" id="1_gibji"]
+[ext_resource type="Script" path="res://assets/scripts/warriorPlayer.gd" id="2_smnfc"]
 
 [sub_resource type="Animation" id="Animation_bev58"]
 resource_name = "Attack"
@@ -95,11 +95,11 @@ _data = {
 [node name="WarriorPlayer" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-texture = ExtResource("1_0dqhd")
+texture = ExtResource("1_gibji")
 hframes = 24
 vframes = 8
 frame = 24
-script = ExtResource("2_6sq80")
+script = ExtResource("2_smnfc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
