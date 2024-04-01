@@ -19,9 +19,6 @@ var is_animating = false
 func _ready():
 	$AnimationPlayer.play("Idle")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func execute_turn():
 	target = warrior_player if truth_chance(50) else mage_player
@@ -43,7 +40,7 @@ func damage_taken(damage):
 
 func attack(enemy):
 	var mitigated_damage = enemy.damage_taken(damage)
-	output.append("Orc warrior attacked %s!" % str(enemy.charName))
+	output.append("Orc Warrior attacked %s!" % str(enemy.charName))
 	
 	if enemy.is_defending:
 		enemy.health -= mitigated_damage * .75
@@ -53,6 +50,8 @@ func attack(enemy):
 	
 	if mitigated_damage == 0:
 		output.append("But %s dodged the attack!" % str(enemy.charName))
+	else:
+		enemy.animate_atk()
 
 func defend():
 	is_defending = true
@@ -70,3 +69,12 @@ func reset():
 	target = null
 	output = []
 	is_animating = false
+
+func animate():
+	$AnimationPlayer.play("Attack")
+
+func animate_atk():
+	if health <= 0:
+		$AnimationPlayer.play("Dies")
+	else:
+		$AnimationPlayer.play("Damaged")

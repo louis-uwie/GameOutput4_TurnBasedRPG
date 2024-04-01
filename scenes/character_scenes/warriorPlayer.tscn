@@ -306,6 +306,7 @@ sources/0 = SubResource("TileSetAtlasSource_jj0hi")
 
 [sub_resource type="SystemFont" id="SystemFont_bw84q"]
 font_names = PackedStringArray("Cooper")
+subpixel_positioning = 0
 
 [node name="WarriorPlayer" type="Sprite2D"]
 texture_filter = 1

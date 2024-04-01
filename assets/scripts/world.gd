@@ -52,6 +52,7 @@ func _process(delta):
 			print("Queue Index: ", queue_index)
 			print("Counter: ", counter)
 			player_notification.text = turn_queue[queue_index].output[counter]
+			turn_queue[queue_index].animate()
 			counter +=1
 			
 			

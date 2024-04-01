@@ -45,8 +45,10 @@ func attack(enemy):
 	
 	if mitigated_damage == 0:
 		output.append("But %s dodged the attack!" % str(enemy.charName))
-		
-		
+	else:
+		enemy.animate_atk()
+
+
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
 
@@ -69,3 +71,12 @@ func reset():
 	target = null
 	output = []
 	is_animating = false
+
+func animate():
+	$AnimationPlayer.play("Attack")
+
+func animate_atk():
+	if health <= 0:
+		$AnimationPlayer.play("Dies")
+	else:
+		$AnimationPlayer.play("Damaged")

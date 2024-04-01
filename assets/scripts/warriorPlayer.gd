@@ -38,8 +38,6 @@ func truth_chance(percent):
 	return random_value <= percent/100
 	
 func attack(enemy):
-	$AnimationPlayer.play("Attack")
-	
 	var mitigated_damage = enemy.damage_taken(damage)
 	output.append("Ally warrior attacked %s!" % str(enemy.charName))
 	
@@ -53,11 +51,14 @@ func attack(enemy):
 
 	if mitigated_damage == 0:
 		output.append("But %s dodged the attack!" % str(enemy.charName))
+	else:
+		enemy.animate_atk()
 
 func defend():
 	is_defending = true
 	output.append("Ally warrior defended!")
 	print("defending")
+	setHealthBar()
 
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
@@ -66,7 +67,7 @@ func damage_taken(damage):
 		mitigated_damage = 0  # Dodge occurred, so damage is completely mitigated
 	elif truth_chance(crit_chance):
 		mitigated_damage *= 2  # Critical hit occurred, so double the damage
-
+	setHealthBar()
 	return mitigated_damage
 	
 func finish_turn():
@@ -79,7 +80,8 @@ func animate_turn():
 		attack(target)
 	if chosen_move == 1:
 		defend()
-		
+
+
 func _on_attack_pressed():
 	notification.text = "Click on an enemy to slash!!"
 	chosen_move = 0
@@ -98,3 +100,12 @@ func reset():
 	target = null
 	output = []
 	is_animating = false
+	
+func animate():
+	$AnimationPlayer.play("Attack")
+	
+func animate_atk():
+	if health <= 0:
+		$AnimationPlayer.play("Dies")
+	else:
+		$AnimationPlayer.play("Damaged")

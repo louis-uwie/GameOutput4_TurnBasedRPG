@@ -38,8 +38,6 @@ func heal_ally():
 	output.append("Ally mage healed Ally Warrior!")
 	
 func life_steal(enemy):
-	$AnimationPlayer.play("Attack")
-	
 	var mitigated_damage = enemy.damage_taken(damage)
 	output.append("Ally mage attacked %s with life steal!" % str(enemy.charName))
 	
@@ -48,17 +46,17 @@ func life_steal(enemy):
 		enemy.is_defending = false
 	else:
 		enemy.health -= mitigated_damage
+
 	setHealthBar()
 	
 	if mitigated_damage == 0:
 		output.append("But %s dodged the attack!" % str(enemy.charName))
 	else:
 		health += 10
+		enemy.animate_atk()
 		
 	
 func freeze(enemy):
-	$AnimationPlayer.play("Attack")
-	
 	enemy.turn_speed -= 10
 	output.append("Enemy %s is freezing! Speed went down to %s." % [str(enemy.charName), str(enemy.turn_speed)])
 	
@@ -74,19 +72,15 @@ func truth_chance(percent):
 	
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
-	$AnimationPlayer.play("Damaged")
 
 	if truth_chance(dodge_chance):
 		mitigated_damage = 0  # Dodge occurred, so damage is completely mitigated
 	elif truth_chance(crit_chance):
 		mitigated_damage *= 2  # Critical hit occurred, so double the damage
-	elif health <= 0:
-		$AnimationPlayer.play("Dies")
 
 	return mitigated_damage
 
 func _on_heal_pressed():
-	$AnimationPlayer.play("Attack")
 	chosen_move = 0
 	finish_turn()
 
@@ -127,3 +121,11 @@ func reset():
 	output = []
 	is_animating = false
 	
+func animate():
+	$AnimationPlayer.play("Attack")
+	
+func animate_atk():
+	if health <= 0:
+		$AnimationPlayer.play("Dies")
+	else:
+		$AnimationPlayer.play("Damaged")
