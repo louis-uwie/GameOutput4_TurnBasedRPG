@@ -28,7 +28,7 @@ func _ready():
 	
 	spdlabel.text = "Speed:   %s" % str(speedMulti)
 	attlabel.text = "Attack:   %s" % str(attackMulti)
-	deflabel.text = "Attack:   %s" % str(attackMulti)
+	deflabel.text = "Defense:   %s" % str(attackMulti)
 	critlabel.text = "Crit:    %s" % str(critMulti)
 	dodgelabel.text = "Dodge:   %s" % str(dodgeMulti)
 	
