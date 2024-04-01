@@ -457,7 +457,3 @@ layer_1/tile_data = PackedInt32Array(1572878, 589824, 1, 1507342, 589824, 1, 144
 [connection signal="pressed" from="TextureRect/CanvasLayer/attdownButton" to="." method="_on_attdown_button_pressed"]
 [connection signal="pressed" from="TextureRect/CanvasLayer/defupButton" to="." method="_on_defup_button_pressed"]
 [connection signal="pressed" from="TextureRect/CanvasLayer/defdownButton" to="." method="_on_defdown_button_pressed"]
-[connection signal="pressed" from="TextureRect/CanvasLayer/critupButton" to="." method="_on_critup_button_pressed"]
-[connection signal="pressed" from="TextureRect/CanvasLayer/critdownButton" to="." method="_on_critdown_button_pressed"]
-[connection signal="pressed" from="TextureRect/CanvasLayer/dodgeupButton" to="." method="_on_dodgeup_button_pressed"]
-[connection signal="pressed" from="TextureRect/CanvasLayer/dodgedownButton" to="." method="_on_dodgedown_button_pressed"]

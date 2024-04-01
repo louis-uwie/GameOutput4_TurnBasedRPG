@@ -5,11 +5,13 @@ extends Sprite2D
 
 const FullHP = 150
 var health = FullHP
+
 var turn_speed = 20
 var damage = 10
 var defense = 10
 var crit_chance = 10
 var dodge_chance = 10
+
 var is_turn_started = false
 var is_turn_done = false
 var is_defending = false

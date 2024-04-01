@@ -3,11 +3,13 @@ extends Sprite2D
 @onready var mage_player = $"../MagePlayer"
 
 var health = 200
+
 var turn_speed = 30
 var damage = 30
 var defense = 20
 var crit_chance = 10
 var dodge_chance = 10
+
 var skip = false
 var is_defending = false
 var target = null
