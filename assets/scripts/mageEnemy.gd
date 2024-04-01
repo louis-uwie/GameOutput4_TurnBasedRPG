@@ -15,12 +15,16 @@ var chosen_move = 0
 var target = null
 var charName = "Orc Mage"
 var output = []
+var is_dead = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
 
 func execute_turn():
-	target = warrior_player if truth_chance(50) else mage_player
+	if warrior_player.is_dead: target = mage_player
+	elif mage_player.is_dead: target = warrior_player
+	else: target = warrior_player if truth_chance(50) else mage_player
+	
 	chosen_move = 0 if truth_chance(50) else 1
 		
 	
@@ -78,5 +82,6 @@ func animate():
 func animate_atk():
 	if health <= 0:
 		$AnimationPlayer.play("Dies")
+		is_dead = false
 	else:
 		$AnimationPlayer.play("Damaged")

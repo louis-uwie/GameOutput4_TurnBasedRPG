@@ -22,12 +22,14 @@ func _ready():
 	
 	
 func _process(delta):
+	if players_array[turn_index].is_dead: turn_index+=1
 	
 	# select move
-	if !players_array[turn_index].is_turn_started:
+	if !players_array[turn_index].is_turn_started and !players_array[turn_index].is_dead:
 		players_array[turn_index].execute_turn()
 		players_array[turn_index].buttons.visible = true
 		return
+	
 	
 	if !players_array[turn_index].is_turn_done: return
 	
@@ -48,10 +50,10 @@ func _process(delta):
 		
 
 		
+		player_notification.text = turn_queue[queue_index].output[counter]
 		if Input.is_action_just_pressed("mouse_left"):
 			print("Queue Index: ", queue_index)
 			print("Counter: ", counter)
-			player_notification.text = turn_queue[queue_index].output[counter]
 			turn_queue[queue_index].animate()
 			counter +=1
 			
@@ -79,12 +81,14 @@ func _compare_speed(a, b):
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("mouse_left") and players_array[turn_index].is_selecting_target:
+		if warrior_enemy.is_dead: return
 		players_array[turn_index].target = warrior_enemy
 		players_array[turn_index].finish_turn()
 
 
 func _on_mage_2d_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("mouse_left") and players_array[turn_index].is_selecting_target:
+		if mage_enemy.is_dead: return
 		players_array[turn_index].target = mage_enemy
 		players_array[turn_index].finish_turn()
 

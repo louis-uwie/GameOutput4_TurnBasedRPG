@@ -19,6 +19,7 @@ var is_selecting_target = false
 var target = null
 var charName = "Ally Mage"
 var output = []
+var is_dead = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -60,7 +61,7 @@ func freeze(enemy):
 	enemy.turn_speed -= 10
 	output.append("Enemy %s is freezing! Speed went down to %s." % [str(enemy.charName), str(enemy.turn_speed)])
 	
-	if truth_chance(15):
+	if truth_chance(100):
 		enemy.skip = true
 		output.append("%s is frozen and can't move!" % str(enemy.charName))
 	setHealthBar()
@@ -127,5 +128,6 @@ func animate():
 func animate_atk():
 	if health <= 0:
 		$AnimationPlayer.play("Dies")
+		is_dead = true
 	else:
 		$AnimationPlayer.play("Damaged")

@@ -19,6 +19,7 @@ var target = null
 var charName = "Ally Warrior"
 var output = []
 var is_animating = false
+var is_dead = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -107,5 +108,6 @@ func animate():
 func animate_atk():
 	if health <= 0:
 		$AnimationPlayer.play("Dies")
+		is_dead = false
 	else:
 		$AnimationPlayer.play("Damaged")
