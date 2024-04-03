@@ -12,16 +12,18 @@ var defense = 10
 var crit_chance = 10
 var dodge_chance = 10
 
-var is_turn_started = false
-var is_turn_done = false
-var is_defending = false
 var chosen_move = 0
-var is_selecting_target = false
 var target = null
 var charName = "Ally Warrior"
 var output = []
+
 var is_animating = false
 var is_dead = false
+var is_turn_started = false
+var is_turn_done = false
+var is_defending = false
+var is_selecting_target = false
+
 
 func _ready():
 	$AnimationPlayer.play("Idle")

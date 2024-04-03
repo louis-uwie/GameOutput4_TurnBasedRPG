@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcphvnrbxkqry"]
+[gd_scene load_steps=11 format=3 uid="uid://bcphvnrbxkqry"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_esw7u"]
 [ext_resource type="PackedScene" uid="uid://bv5fnvb3h5khm" path="res://scenes/user_interfaces/background.tscn" id="1_skhkr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c70f4uj38afbb" path="res://scenes/character_scenes/warriorEnemy.tscn" id="3_iw43f"]
 [ext_resource type="PackedScene" uid="uid://b0hqiuqtevwq1" path="res://scenes/character_scenes/mageEnemy.tscn" id="4_lxmgq"]
 [ext_resource type="PackedScene" uid="uid://cm8735yg7m83d" path="res://scenes/character_scenes/warriorPlayer.tscn" id="5_0ex7c"]
+[ext_resource type="PackedScene" uid="uid://ce2lsbe51oofa" path="res://scenes/user_interfaces/stats.tscn" id="7_3qsqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ewac8"]
 radius = 8.76427
@@ -51,6 +52,8 @@ offset_bottom = 135.0
 theme_override_fonts/font = SubResource("SystemFont_af1j8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="stats" parent="." instance=ExtResource("7_3qsqv")]
 
 [connection signal="input_event" from="WarriorEnemy/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="MageEnemy/Mage2D" to="." method="_on_mage_2d_input_event"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce2lsbe51oofa"]
+[gd_scene load_steps=15 format=3 uid="uid://ce2lsbe51oofa"]
 
 [ext_resource type="Script" path="res://assets/scripts/stats.gd" id="1_10pmi"]
-[ext_resource type="Texture2D" uid="uid://d4avjh8xykx6e" path="res://assets/sprites/Puny-Characters/Environment/Dirt.png" id="2_ot813"]
 [ext_resource type="Texture2D" uid="uid://chwvpuobbodvx" path="res://assets/sprites/Icons/upicon.png" id="3_p70wr"]
 [ext_resource type="Texture2D" uid="uid://dbbr4ydhc30r2" path="res://assets/sprites/Icons/downicon.png" id="4_4x08s"]
 [ext_resource type="Texture2D" uid="uid://c21bxhl6vrxw" path="res://assets/sprites/Icons/speedicon.png" id="5_0hdqq"]
@@ -239,14 +238,9 @@ grow_vertical = 2
 script = ExtResource("1_10pmi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.895
-anchor_bottom = 0.833
-offset_right = 73.92
-offset_bottom = 85.504
-texture = ExtResource("2_ot813")
-expand_mode = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="TextureRect"]
 offset = Vector2(20, -40)
@@ -412,6 +406,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = 64.0
+offset_right = 360.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12

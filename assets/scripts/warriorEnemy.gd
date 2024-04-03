@@ -11,13 +11,15 @@ var crit_chance = 10
 var dodge_chance = 10
 
 var skip = false
-var is_defending = false
 var target = null
 var chosen_move = 0
+
 var charName = "Orc Warrior"
 var output = []
+
 var is_animating = false
 var is_dead = false
+var is_defending = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -30,9 +32,11 @@ func execute_turn():
 	
 	chosen_move = 0 if truth_chance(50) else 1
 
+
 func truth_chance(percent):
 	var random_value = randf()
 	return random_value <= percent/100
+
 
 func damage_taken(damage):
 	var mitigated_damage = damage * (1 - defense / 100)
@@ -47,21 +51,23 @@ func damage_taken(damage):
 func attack(enemy):
 	var mitigated_damage = enemy.damage_taken(damage)
 	output.append("Orc Warrior attacked %s!" % str(enemy.charName))
-	
+
 	if enemy.is_defending:
 		enemy.health -= mitigated_damage * .75
 		enemy.is_defending = false
 	else:
 		enemy.health -= mitigated_damage
-	
+
 	if mitigated_damage == 0:
 		output.append("But %s dodged the attack!" % str(enemy.charName))
 	else:
 		enemy.animate_atk()
 
+
 func defend():
 	is_defending = true
 	output.append("Orc Warrior is defending itself!")
+	
 	
 func animate_turn():
 	if chosen_move == 0:
@@ -69,15 +75,10 @@ func animate_turn():
 	if chosen_move == 1:
 		attack(target)
 		
-func reset():
-	skip = false
-	is_defending = false
-	target = null
-	output = []
-	is_animating = false
 
 func animate():
 	$AnimationPlayer.play("Attack")
+
 
 func animate_atk():
 	if health <= 0:
@@ -85,3 +86,10 @@ func animate_atk():
 		is_dead = false
 	else:
 		$AnimationPlayer.play("Damaged")
+		
+func reset():
+	skip = false
+	is_defending = false
+	target = null
+	output = []
+	is_animating = false

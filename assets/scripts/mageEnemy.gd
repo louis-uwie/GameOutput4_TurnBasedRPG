@@ -1,7 +1,9 @@
 extends Sprite2D
+
 @onready var warrior_enemy = $"../WarriorEnemy"
 @onready var warrior_player = $"../WarriorPlayer"
 @onready var mage_player = $"../MagePlayer"
+
 var is_animating = false
 var health = 100
 
@@ -11,13 +13,15 @@ var defense = 10
 var crit_chance = 25
 var dodge_chance = 25
 
-var skip = false
-var is_defending = false
 var chosen_move = 0
 var target = null
+
 var charName = "Orc Mage"
 var output = []
+
+var skip = false
 var is_dead = false
+var is_defending = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
