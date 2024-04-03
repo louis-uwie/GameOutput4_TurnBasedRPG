@@ -29,6 +29,7 @@ var is_defending = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
+	notification.text = ""
 	$HealthBar.max_value = FullHP
 	setHealthBar()
 
@@ -139,6 +140,13 @@ func animate_atk():
 	else:
 		$AnimationPlayer.play("Damaged")
 
+func idle():
+		$AnimationPlayer.play("Idle")
+		
+func dead():
+		$AnimationPlayer.play("Dead")
+		health = 0
+		setHealthBar()
 
 func reset():
 	is_turn_started = false

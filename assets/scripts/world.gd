@@ -13,6 +13,7 @@ var counter = 0
 var queue_index = 0
 
 func _ready():
+	player_notification.text = ""
 	players_array.append(mage_player)
 	players_array.append(warrior_player)
 	turn_queue.append(mage_player)
@@ -30,6 +31,10 @@ func _process(delta):
 		players_array[turn_index].buttons.visible = true
 		return
 	
+	if players_array[turn_index].is_dead:
+		players_array[turn_index].dead()
+	else:
+		players_array[turn_index].idle()
 	
 	if !players_array[turn_index].is_turn_done: return
 	

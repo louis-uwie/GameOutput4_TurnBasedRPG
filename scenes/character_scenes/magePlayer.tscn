@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm5ctrylaiabw"]
+[gd_scene load_steps=17 format=3 uid="uid://bm5ctrylaiabw"]
 
 [ext_resource type="Texture2D" uid="uid://cxx837i0pbppr" path="res://assets/sprites/Puny-Characters/Mage-Cyan.png" id="1_14qhr"]
 [ext_resource type="Script" path="res://assets/scripts/magePlayer.gd" id="2_kbqic"]
@@ -86,11 +86,39 @@ tracks/0/keys = {
 "update": 1,
 "values": [24]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(23, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e4kn3"]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(23, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dh8b2"]
 _data = {
 "Attack": SubResource("Animation_1obf0"),
 "Damaged": SubResource("Animation_jkphx"),
+"Dead": SubResource("Animation_e4kn3"),
 "Dies": SubResource("Animation_3so0w"),
 "Idle": SubResource("Animation_p61al"),
 "RESET": SubResource("Animation_mw2k7")
@@ -315,7 +343,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_14qhr")
 hframes = 24
 vframes = 8
-frame = 24
+frame = 47
 script = ExtResource("2_kbqic")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

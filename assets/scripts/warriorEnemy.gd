@@ -90,6 +90,14 @@ func animate_atk():
 		is_dead = false
 	else:
 		$AnimationPlayer.play("Damaged")
+
+func idle():
+		$AnimationPlayer.play("Idle")
+		
+func dead():
+		$AnimationPlayer.play("Dead")
+		health = 0
+		setHealthBar()
 		
 func reset():
 	skip = false

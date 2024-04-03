@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0hqiuqtevwq1"]
+[gd_scene load_steps=10 format=3 uid="uid://b0hqiuqtevwq1"]
 
 [ext_resource type="Texture2D" uid="uid://dpujhdh8wg8kg" path="res://assets/sprites/Puny-Characters/Orc-Peon-Red.png" id="1_mf6qb"]
 [ext_resource type="Script" path="res://assets/scripts/mageEnemy.gd" id="2_wbqln"]
@@ -82,11 +82,39 @@ tracks/0/keys = {
 "update": 1,
 "values": [144]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(23, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_cejyq"]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(23, 6)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxlwj"]
 _data = {
 "Attack": SubResource("Animation_twp75"),
 "Damaged": SubResource("Animation_kb6pg"),
+"Dead": SubResource("Animation_cejyq"),
 "Dies": SubResource("Animation_rw0lj"),
 "Idle": SubResource("Animation_itujb"),
 "RESET": SubResource("Animation_mlvqx")
@@ -98,7 +126,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_mf6qb")
 hframes = 24
 vframes = 8
-frame = 144
+frame = 167
 script = ExtResource("2_wbqln")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
