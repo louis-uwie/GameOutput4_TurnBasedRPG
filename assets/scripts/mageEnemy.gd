@@ -3,6 +3,7 @@ extends Sprite2D
 @onready var warrior_enemy = $"../WarriorEnemy"
 @onready var warrior_player = $"../WarriorPlayer"
 @onready var mage_player = $"../MagePlayer"
+@onready var progress_bar = $ProgressBar
 
 var is_animating = false
 var health = 100
@@ -25,6 +26,10 @@ var is_defending = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
+	setHealthBar()
+
+func setHealthBar() -> void:
+	$ProgressBar.value = health
 
 func execute_turn():
 	if warrior_player.is_dead: target = mage_player

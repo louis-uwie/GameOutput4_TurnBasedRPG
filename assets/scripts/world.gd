@@ -38,18 +38,18 @@ func _process(delta):
 	if turn_index:
 		mage_enemy.execute_turn()
 		warrior_enemy.execute_turn()
-		
+
 		turn_queue.sort_custom(_compare_speed)
 		#for turn in turn_queue:
 			#print("Turn: ", turn, " Speed: ", turn.turn_speed)
-		
+
 		if !turn_queue[queue_index].is_animating:
 			turn_queue[queue_index].animate_turn()
 			turn_queue[queue_index].is_animating = true
+			turn_queue[queue_index].setHealthBar()
 			print("Animating")
-		
 
-		
+
 		player_notification.text = turn_queue[queue_index].output[counter]
 		if Input.is_action_just_pressed("mouse_left"):
 			print("Queue Index: ", queue_index)

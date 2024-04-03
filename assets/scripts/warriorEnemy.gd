@@ -23,8 +23,12 @@ var is_defending = false
 
 func _ready():
 	$AnimationPlayer.play("Idle")
+	setHealthBar()
 
-	
+func setHealthBar() -> void:
+	$ProgressBar.value = health
+
+
 func execute_turn():
 	if warrior_player.is_dead: target = mage_player
 	elif mage_player.is_dead: target = warrior_player

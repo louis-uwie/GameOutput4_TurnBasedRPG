@@ -261,7 +261,6 @@ offset_left = 368.0
 offset_top = 208.0
 offset_right = 401.0
 offset_bottom = 246.0
-theme_override_colors/icon_hover_color = Color(0.156863, 0.380392, 0, 1)
 icon = ExtResource("3_p70wr")
 
 [node name="spddownButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -269,7 +268,6 @@ offset_left = 416.0
 offset_top = 208.0
 offset_right = 450.0
 offset_bottom = 246.0
-theme_override_colors/icon_hover_color = Color(0.619608, 0, 0, 1)
 icon = ExtResource("4_4x08s")
 
 [node name="attupButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -277,7 +275,6 @@ offset_left = 368.0
 offset_top = 256.0
 offset_right = 401.0
 offset_bottom = 294.0
-theme_override_colors/icon_hover_color = Color(0, 0.396078, 0, 1)
 icon = ExtResource("3_p70wr")
 
 [node name="attdownButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -285,7 +282,6 @@ offset_left = 416.0
 offset_top = 256.0
 offset_right = 450.0
 offset_bottom = 294.0
-theme_override_colors/icon_hover_color = Color(0.592157, 0, 0, 1)
 icon = ExtResource("4_4x08s")
 
 [node name="defupButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -293,7 +289,6 @@ offset_left = 368.0
 offset_top = 304.0
 offset_right = 401.0
 offset_bottom = 342.0
-theme_override_colors/icon_hover_color = Color(0, 0.494118, 0, 1)
 icon = ExtResource("3_p70wr")
 
 [node name="defdownButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -301,7 +296,6 @@ offset_left = 416.0
 offset_top = 304.0
 offset_right = 450.0
 offset_bottom = 342.0
-theme_override_colors/icon_hover_color = Color(0.482353, 0, 0, 1)
 icon = ExtResource("4_4x08s")
 
 [node name="critupButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -309,7 +303,6 @@ offset_left = 368.0
 offset_top = 352.0
 offset_right = 401.0
 offset_bottom = 390.0
-theme_override_colors/icon_hover_color = Color(0, 0.4, 0, 1)
 icon = ExtResource("3_p70wr")
 
 [node name="critdownButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -317,7 +310,6 @@ offset_left = 416.0
 offset_top = 352.0
 offset_right = 450.0
 offset_bottom = 390.0
-theme_override_colors/icon_hover_color = Color(0.513726, 0, 0, 1)
 icon = ExtResource("4_4x08s")
 
 [node name="dodgeupButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -325,7 +317,6 @@ offset_left = 368.0
 offset_top = 400.0
 offset_right = 401.0
 offset_bottom = 438.0
-theme_override_colors/icon_hover_color = Color(0, 0.419608, 0, 1)
 icon = ExtResource("3_p70wr")
 
 [node name="dodgedownButton" type="Button" parent="TextureRect/CanvasLayer"]
@@ -333,7 +324,6 @@ offset_left = 416.0
 offset_top = 400.0
 offset_right = 450.0
 offset_bottom = 438.0
-theme_override_colors/icon_hover_color = Color(0.521569, 0, 0, 1)
 icon = ExtResource("4_4x08s")
 
 [node name="spdlabel" type="Label" parent="TextureRect/CanvasLayer"]
